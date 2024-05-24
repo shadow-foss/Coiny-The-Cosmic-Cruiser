@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://usi685kd6e4k"]
+
+[ext_resource type="Shader" path="res://scripts/coin.gdshader" id="1_xvbdd"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_xvbdd")
+shader_parameter/flash_color = Color(0.301961, 0.301961, 0.301961, 1)
+shader_parameter/flash_modifier = 0.135
