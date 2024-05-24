@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dobfbijgos8kh"]
+
+[ext_resource type="Texture2D" uid="uid://cxhuhhnkb13x7" path="res://assets/textures/ball.png" id="1_2wqxj"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ila60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cicnn"]
+radius = 66.0076
+
+[sub_resource type="Gradient" id="Gradient_ywtia"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jy1rp"]
+gradient = SubResource("Gradient_ywtia")
+width = 600
+height = 600
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.811966, 0.65812)
+
+[node name="Player" type="RigidBody2D"]
+collision_mask = 6
+mass = 0.9
+gravity_scale = 1.66533e-16
+script = ExtResource("1_ila60")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.68, 0.68)
+limit_left = 0
+limit_top = 0
+limit_right = 1905
+limit_bottom = 1060
+editor_draw_limits = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.15, 4.15)
+texture = ExtResource("1_2wqxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cicnn")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.513726, 1, 1, 1)
+texture = SubResource("GradientTexture2D_jy1rp")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://cphlt5ihrcd8v"]
+
+[ext_resource type="PackedScene" uid="uid://dobfbijgos8kh" path="res://scene/player.tscn" id="1_d5a3m"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_s4wx4"]
+[ext_resource type="Texture2D" uid="uid://bljq02wmq1hgm" path="res://assets/textures/bg.png" id="2_qk3ll"]
+[ext_resource type="PackedScene" uid="uid://hosqkmsah7s0" path="res://scene/coin_spawner.tscn" id="4_u1gg8"]
+[ext_resource type="AudioStream" uid="uid://mdsw2xewaybh" path="res://assets/audio/Retro PickUp Coin 04.wav" id="5_tlm4p"]
+[ext_resource type="PackedScene" uid="uid://d2ngd3f33qmh1" path="res://scene/hud.tscn" id="6_wcljd"]
+[ext_resource type="PackedScene" uid="uid://bsua8ad67essn" path="res://scene/pause_menu.tscn" id="7_v2amy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuymp"]
+size = Vector2(125, 1219)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dfi"]
+size = Vector2(2028, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_560qe"]
+size = Vector2(110.5, 1214)
+
+[sub_resource type="Environment" id="Environment_c70pd"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.3
+glow_bloom = 0.22
+glow_blend_mode = 0
+fog_enabled = true
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_s4wx4")
+
+[node name="bg" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_qk3ll")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_d5a3m")]
+position = Vector2(930, 477)
+
+[node name="walls" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(-63, 588.5)
+shape = SubResource("RectangleShape2D_xuymp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(992, -62)
+shape = SubResource("RectangleShape2D_g5dfi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(1974.75, 557)
+shape = SubResource("RectangleShape2D_560qe")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(962, 1140)
+shape = SubResource("RectangleShape2D_g5dfi")
+
+[node name="coin_spawner" parent="." instance=ExtResource("4_u1gg8")]
+
+[node name="coin_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tlm4p")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("6_wcljd")]
+
+[node name="pause_menu" parent="UI" instance=ExtResource("7_v2amy")]
+process_mode = 3
+visible = false
+
+[node name="coin_container" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c70pd")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.560955, 0.560955, 0.560955, 1)
+energy = 0.71
+blend_mode = 1
+
+[connection signal="no_of_coins" from="." to="coin_spawner" method="_on_game_no_of_coins"]
+[connection signal="coin_spawned" from="coin_spawner" to="." method="_on_coin_spawner_coin_spawned"]

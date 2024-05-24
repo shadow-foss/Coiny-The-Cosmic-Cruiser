@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkifw5ef65aqg"]
+
+[ext_resource type="FontFile" uid="uid://dq3d75iilxvsc" path="res://assets/fonts/Kenney Blocks.ttf" id="1_86f7e"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_imk5d"]
+[ext_resource type="StyleBox" uid="uid://du4g1tkdyntvy" path="res://assets/UI/button.stylebox" id="1_nhvfx"]
+[ext_resource type="Texture2D" uid="uid://blotgk163afty" path="res://assets/UI/GAME MENU IMAGE.png" id="2_6rrpj"]
+[ext_resource type="StyleBox" uid="uid://bnr84lk4bn1y8" path="res://assets/UI/main_menu_button_pressed.stylebox" id="2_x1568"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -11.0
+offset_right = -1.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+script = ExtResource("1_imk5d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 727.0
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("2_6rrpj")
+
+[node name="title2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 82.0
+offset_right = 334.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.54145, 0.426864, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.209548, 0.000469049, 0.498312, 1)
+theme_override_fonts/font = ExtResource("1_86f7e")
+theme_override_font_sizes/font_size = 16
+text = "The Cosmic Cruiser"
+
+[node name="title1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 51.6667
+offset_right = 341.0
+offset_bottom = 100.667
+theme_override_colors/font_color = Color(0.456, 0.0511654, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.125269, 0.000134062, 0.362309, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("1_86f7e")
+theme_override_font_sizes/font_size = 21
+text = "Coiny
+"
+
+[node name="Start_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 91.0
+offset_top = 169.0
+offset_right = 165.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.560885, 0.698097, 1, 1)
+theme_override_colors/font_hover_color = Color(0.653166, 0.766554, 1, 1)
+theme_override_fonts/font = ExtResource("1_86f7e")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("1_nhvfx")
+theme_override_styles/hover = ExtResource("2_x1568")
+theme_override_styles/pressed = ExtResource("2_x1568")
+theme_override_styles/focus = ExtResource("2_x1568")
+text = "START"
+
+[node name="Quit_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 253.667
+offset_top = 169.0
+offset_right = 327.667
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.78, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.88, 0.249333, 0, 1)
+theme_override_fonts/font = ExtResource("1_86f7e")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("1_nhvfx")
+theme_override_styles/hover = ExtResource("2_x1568")
+theme_override_styles/pressed = ExtResource("2_x1568")
+theme_override_styles/focus = ExtResource("2_x1568")
+text = "Quit"
+
+[connection signal="pressed" from="Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

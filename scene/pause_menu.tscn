@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsua8ad67essn"]
+
+[ext_resource type="Script" path="res://scene/pause_menu.gd" id="1_0krmm"]
+[ext_resource type="Texture2D" uid="uid://dkpi67ypevdxh" path="res://assets/UI/menu_panel.png" id="1_83bs7"]
+[ext_resource type="FontFile" uid="uid://dq3d75iilxvsc" path="res://assets/fonts/Kenney Blocks.ttf" id="2_nlqms"]
+[ext_resource type="StyleBox" uid="uid://du4g1tkdyntvy" path="res://assets/UI/button.stylebox" id="3_ati51"]
+[ext_resource type="StyleBox" uid="uid://bnr84lk4bn1y8" path="res://assets/UI/main_menu_button_pressed.stylebox" id="4_oiu5u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur1l7"]
+texture = ExtResource("1_83bs7")
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0krmm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1284.0
+offset_bottom = 726.0
+color = Color(0.207843, 0.521569, 1, 0.160784)
+
+[node name="Pause_menu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 137.0
+offset_right = 811.0
+offset_bottom = 530.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ur1l7")
+
+[node name="paused_tex" type="Label" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 165.0
+offset_right = 758.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("2_nlqms")
+theme_override_font_sizes/font_size = 45
+text = "paused
+"
+
+[node name="resume_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 261.0
+offset_right = 593.265
+offset_bottom = 310.0
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.560784, 0.698039, 1, 1)
+theme_override_colors/font_hover_color = Color(0.654902, 0.764706, 1, 1)
+theme_override_fonts/font = ExtResource("2_nlqms")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("3_ati51")
+theme_override_styles/hover = ExtResource("4_oiu5u")
+theme_override_styles/pressed = ExtResource("4_oiu5u")
+theme_override_styles/focus = ExtResource("4_oiu5u")
+text = "resume"
+
+[node name="Quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 383.0
+offset_right = 617.0
+offset_bottom = 432.0
+scale = Vector2(2.225, 2.225)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.780392, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0.25098, 0, 1)
+theme_override_fonts/font = ExtResource("2_nlqms")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/normal = ExtResource("3_ati51")
+theme_override_styles/hover = ExtResource("4_oiu5u")
+theme_override_styles/pressed = ExtResource("4_oiu5u")
+theme_override_styles/focus = ExtResource("4_oiu5u")
+text = "QUit
+"
+
+[connection signal="pressed" from="resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

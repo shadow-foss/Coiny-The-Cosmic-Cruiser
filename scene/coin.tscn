@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmd6xuifaq516"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_gayie"]
+[ext_resource type="Material" uid="uid://usi685kd6e4k" path="res://assets/textures/coin.tres" id="2_oigal"]
+[ext_resource type="Texture2D" uid="uid://be4vjersustg8" path="res://assets/textures/coin.png" id="3_ct6k3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghdyy"]
+radius = 31.7805
+
+[node name="coin" type="Area2D"]
+script = ExtResource("1_gayie")
+
+[node name="Coin" type="Sprite2D" parent="."]
+material = ExtResource("2_oigal")
+texture = ExtResource("3_ct6k3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_ghdyy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
