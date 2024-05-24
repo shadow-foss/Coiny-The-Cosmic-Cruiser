@@ -3,6 +3,6 @@ res://scene/coin.tscn::c9aef35fea60f8738badf549725db9f2::1716551218::res://.godo
 res://scene/coin_spawner.tscn::bdab6477e3255d4d71bfc94b457924db::1716551218::res://.godot/exported/133200997/export-24722102c1c1235a85193bd72ae4d7fb-coin_spawner.scn
 res://scene/game.tscn::0db49507bb60ec8bf086dd10816de179::1716551218::res://.godot/exported/133200997/export-caa10c3bd03e8ed3318171f5303f6366-game.scn
 res://scene/hud.tscn::818357caf193e6735e9d3029c1815ba0::1716551218::res://.godot/exported/133200997/export-b9c847c7bd080199bafb9aeb591ea1f6-hud.scn
-res://scene/main_menu.tscn::4ececc496a11d520dbbecf37028d97ab::1716551218::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
+res://scene/main_menu.tscn::4ececc496a11d520dbbecf37028d97ab::1716554384::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
 res://scene/pause_menu.tscn::ce8fa2b36d1bda770183599f6993b750::1716551218::res://.godot/exported/133200997/export-f7c6872a4da50f9d7d9e5eb1d3b96772-pause_menu.scn
 res://scene/player.tscn::93699445a62dd54ef01f64763cfaa71a::1716551218::res://.godot/exported/133200997/export-34afcb3bda2393b8f6a0cd71512aeb81-player.scn
