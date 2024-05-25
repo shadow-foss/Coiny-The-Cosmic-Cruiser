@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsua8ad67essn"]
 
-[ext_resource type="Script" path="res://scene/pause_menu.gd" id="1_0krmm"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0krmm"]
 [ext_resource type="Texture2D" uid="uid://dkpi67ypevdxh" path="res://assets/UI/menu_panel.png" id="1_83bs7"]
 [ext_resource type="FontFile" uid="uid://dq3d75iilxvsc" path="res://assets/fonts/Kenney Blocks.ttf" id="2_nlqms"]
 [ext_resource type="StyleBox" uid="uid://du4g1tkdyntvy" path="res://assets/UI/button.stylebox" id="3_ati51"]

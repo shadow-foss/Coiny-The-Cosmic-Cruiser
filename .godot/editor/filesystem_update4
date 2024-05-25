@@ -1,1 +1,5 @@
 res://scene/main_menu.tscn
+res://scripts/game.gd
+res://scripts/pause_menu.gd
+res://scripts/main_menu.gd
+res://scene/pause_menu.tscn

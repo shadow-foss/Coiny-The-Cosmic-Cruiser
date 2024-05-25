@@ -8,7 +8,6 @@ signal no_of_coins(coins_on_screen)
 @onready var coin_aud = $coin_sound
 @onready var coin_cont = $coin_container
 @onready var player = $Player
-@onready var pause_menu = $UI/pause_menu
 
 var coins_on_screen = 0
 var score = 0
@@ -16,8 +15,6 @@ var lives = 3
 var paused = false
 
 func _process(delta): 
-	if Input.is_action_just_pressed("pause_resume"): # when the escape key is pressed it calls pause func
-		pause()
 	emit_signal("no_of_coins",coins_on_screen ) # emits the signaml with no.of coins in scene as parameter
 
 func _on_coin_spawner_coin_spawned(coin_inst, spawn_pos): #connected the signal from coin spawner. 
@@ -39,13 +36,3 @@ func collected():
 	coin_aud.play() #plays the coin_collected audio
 	score += 1 #how much score should increase per coin
 	hud.set_score(score) #sets the score to the score label 
-
-func pause(): # func for pause_resume
-	if paused:# gets the variable pause assigned as false at the start of code
-		pause_menu.hide() #hides he pause menu
-		Engine.time_scale = 1 # since its being resume engine time is 1
-		paused = false # sets  that game has been resumed
-	else: 
-		pause_menu.show()#shows the pause menu
-		Engine.time_scale = 0#sets engine time to zero since its paused
-		paused = true# sets that game is paused
