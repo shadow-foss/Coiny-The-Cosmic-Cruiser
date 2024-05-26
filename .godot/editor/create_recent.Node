@@ -1,6 +1,7 @@
+Node
+Node2D
 Label
 ColorRect
-Node
 CollisionShape2D
 StaticBody2D
 RayCast2D

@@ -68,6 +68,7 @@ pause_resume={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.web="mobile"
 textures/vram_compression/import_s3tc_bptc=true
 environment/screen_space_reflection/roughness_quality=2
 viewport/hdr_2d=true

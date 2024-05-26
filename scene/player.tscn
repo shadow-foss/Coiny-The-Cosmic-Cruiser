@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ila60"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cicnn"]
-radius = 66.0076
+radius = 50.04
 
 [sub_resource type="Gradient" id="Gradient_ywtia"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -25,15 +25,14 @@ gravity_scale = 1.66533e-16
 script = ExtResource("1_ila60")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.68, 0.68)
 limit_left = 0
 limit_top = 0
-limit_right = 1905
-limit_bottom = 1060
+limit_right = 1280
+limit_bottom = 720
 editor_draw_limits = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4.15, 4.15)
+scale = Vector2(3.3, 3.3)
 texture = ExtResource("1_2wqxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

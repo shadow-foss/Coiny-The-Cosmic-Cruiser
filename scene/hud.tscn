@@ -18,16 +18,16 @@ offset_left = 33.0
 offset_right = 307.0
 offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("1_h554o")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 30
 text = "SCORE:0
 "
 
 [node name="lives" type="Label" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 66.0
-offset_right = 377.0
-offset_bottom = 179.0
+offset_left = 31.0
+offset_top = 40.0
+offset_right = 405.0
+offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("1_h554o")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 35
 text = "Lives:3"

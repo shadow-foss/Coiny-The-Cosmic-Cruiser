@@ -4,17 +4,18 @@
 [ext_resource type="Script" path="res://scripts/missile.gd" id="1_s1wfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqmqf"]
-size = Vector2(72, 24)
+size = Vector2(48, 14)
 
 [node name="missile" type="Area2D"]
 script = ExtResource("1_s1wfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 texture = ExtResource("1_ey1u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_aqmqf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://oc3p7yny62dq"]
+[gd_scene format=3 uid="uid://oc3p7yny62dq"]
 
-[ext_resource type="FontFile" uid="uid://dq3d75iilxvsc" path="res://assets/fonts/Kenney Blocks.ttf" id="1_qogo1"]
-
-[node name="Restart menu" type="Control"]
+[node name="restart_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,16 +10,6 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 368.0
-offset_right = 1469.0
-offset_bottom = 535.0
-theme_override_fonts/font = ExtResource("1_qogo1")
-theme_override_font_sizes/font_size = 56
-text = "mission failed"
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.611765, 0.592157, 1, 1)
