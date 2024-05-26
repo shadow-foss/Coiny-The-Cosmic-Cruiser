@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cphlt5ihrcd8v"]
+[gd_scene load_steps=14 format=3 uid="uid://cphlt5ihrcd8v"]
 
 [ext_resource type="PackedScene" uid="uid://dobfbijgos8kh" path="res://scene/player.tscn" id="1_d5a3m"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_s4wx4"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://mdsw2xewaybh" path="res://assets/audio/Retro PickUp Coin 04.wav" id="5_tlm4p"]
 [ext_resource type="PackedScene" uid="uid://d2ngd3f33qmh1" path="res://scene/hud.tscn" id="6_wcljd"]
 [ext_resource type="PackedScene" uid="uid://bsua8ad67essn" path="res://scene/pause_menu.tscn" id="7_v2amy"]
+[ext_resource type="PackedScene" uid="uid://diau5n0nqttci" path="res://scene/turret.tscn" id="8_2vxui"]
+[ext_resource type="PackedScene" uid="uid://oc3p7yny62dq" path="res://scene/restart_menu.tscn" id="9_xcq5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuymp"]
 size = Vector2(125, 1219)
@@ -70,6 +72,9 @@ stream = ExtResource("5_tlm4p")
 process_mode = 3
 visible = false
 
+[node name="Restart menu" parent="UI" instance=ExtResource("9_xcq5j")]
+visible = false
+
 [node name="coin_container" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -80,5 +85,10 @@ color = Color(0.560955, 0.560955, 0.560955, 1)
 energy = 0.71
 blend_mode = 1
 
+[node name="turret" parent="." instance=ExtResource("8_2vxui")]
+position = Vector2(1248, 385)
+rotation = 3.14159
+
 [connection signal="no_of_coins" from="." to="coin_spawner" method="_on_game_no_of_coins"]
+[connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
 [connection signal="coin_spawned" from="coin_spawner" to="." method="_on_coin_spawner_coin_spawned"]

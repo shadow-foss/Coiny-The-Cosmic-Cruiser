@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwrgj5nw3dok2"]
+
+[ext_resource type="Texture2D" uid="uid://dtivlf1mka48e" path="res://assets/textures/missile.png" id="1_ey1u2"]
+[ext_resource type="Script" path="res://scripts/missile.gd" id="1_s1wfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqmqf"]
+size = Vector2(72, 24)
+
+[node name="missile" type="Area2D"]
+script = ExtResource("1_s1wfj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(3, 3)
+texture = ExtResource("1_ey1u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aqmqf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-11, 0)
+scale = Vector2(0.2, 0.35)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -8,14 +8,18 @@ signal no_of_coins(coins_on_screen)
 @onready var coin_aud = $coin_sound
 @onready var coin_cont = $coin_container
 @onready var player = $Player
-
+@onready var R_menu = $"UI/Restart menu"
 var coins_on_screen = 0
 var score = 0
 var lives = 3
 var paused = false
-
+var is_alive = true
 func _process(delta): 
 	emit_signal("no_of_coins",coins_on_screen ) # emits the signaml with no.of coins in scene as parameter
+	if is_alive == false:
+		R_menu.show()
+		get_tree().paused = true
+
 
 func _on_coin_spawner_coin_spawned(coin_inst, spawn_pos): #connected the signal from coin spawner. 
 	coin_inst.connect("coin_collected", collected) #connects coin collected signal to colleced() func
@@ -36,3 +40,10 @@ func collected():
 	coin_aud.play() #plays the coin_collected audio
 	score += 1 #how much score should increase per coin
 	hud.set_score(score) #sets the score to the score label 
+
+
+func _on_player_took_damage():
+	lives -= 1
+	hud.set_life(lives)
+	if lives <= 0:
+		is_alive = false

@@ -19,7 +19,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.811966, 0.65812)
 
 [node name="Player" type="RigidBody2D"]
-collision_mask = 6
+collision_mask = 14
 mass = 0.9
 gravity_scale = 1.66533e-16
 script = ExtResource("1_ila60")

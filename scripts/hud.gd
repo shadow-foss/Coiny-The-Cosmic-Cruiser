@@ -10,4 +10,4 @@ func set_score(new_score):# new func set_score this needs a parameter or argueme
 
 
 func set_life(lives):#its similar to above func but for lives
-	Lives.text = "X" + str(lives)#work in progess
+	Lives.text = "lives:" + str(lives)#work in progess

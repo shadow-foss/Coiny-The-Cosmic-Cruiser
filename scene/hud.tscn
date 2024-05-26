@@ -14,8 +14,9 @@ script = ExtResource("1_b5wh8")
 
 [node name="score" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 33.0
+offset_right = 307.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("1_h554o")
 theme_override_font_sizes/font_size = 55
 text = "SCORE:0
@@ -23,10 +24,10 @@ text = "SCORE:0
 
 [node name="lives" type="Label" parent="."]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 77.0
-offset_right = 260.0
-offset_bottom = 190.0
+offset_left = 3.0
+offset_top = 66.0
+offset_right = 377.0
+offset_bottom = 179.0
 theme_override_fonts/font = ExtResource("1_h554o")
 theme_override_font_sizes/font_size = 75
-text = "3"
+text = "Lives:3"

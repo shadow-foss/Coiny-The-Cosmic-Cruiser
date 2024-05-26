@@ -1,5 +1,14 @@
 res://scene/main_menu.tscn
-res://scripts/game.gd
-res://scripts/pause_menu.gd
-res://scripts/main_menu.gd
 res://scene/pause_menu.tscn
+res://scene/coin.tscn
+res://scene/player.tscn
+res://scene/game.tscn
+res://scene/missile.tscn
+res://scripts/missile.gd
+res://scene/turret.tscn
+res://scripts/turret.gd
+res://scripts/game.gd
+res://scripts/hud.gd
+res://scripts/player.gd
+res://scene/hud.tscn
+res://scene/restart_menu.tscn

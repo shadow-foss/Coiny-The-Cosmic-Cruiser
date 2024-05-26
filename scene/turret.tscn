@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://diau5n0nqttci"]
+
+[ext_resource type="Texture2D" uid="uid://mgibctoay1ho" path="res://assets/textures/turret_base.png" id="1_n77qv"]
+[ext_resource type="Script" path="res://scripts/turret.gd" id="1_qw3h5"]
+[ext_resource type="Texture2D" uid="uid://cqothdby64rg3" path="res://assets/textures/turret_shooing_part.png" id="2_lr4eu"]
+
+[node name="turret" type="Node2D"]
+script = ExtResource("1_qw3h5")
+
+[node name="Turret_base" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_n77qv")
+
+[node name="Shooting_part" type="Sprite2D" parent="."]
+position = Vector2(-25, -1)
+rotation = 6.28319
+scale = Vector2(4, 4)
+texture = ExtResource("2_lr4eu")
+offset = Vector2(6, 2.08165e-12)
+
+[node name="muzzle" type="Marker2D" parent="Shooting_part"]
+position = Vector2(31.25, 0.249995)
+
+[node name="Cooldown" type="Timer" parent="."]
+autostart = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-23, 2)
+
+[node name="missile_container" type="Node" parent="."]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

@@ -1,4 +1,5 @@
 extends RigidBody2D
+signal took_damage
 #speeds
 #NOTE: adjusting the mass or other stuffs in rigidbody2d node could affect speed and movement
 #@export exports the variable to the inspector menu 
@@ -24,4 +25,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		apply_torque(rotational_speed)
 		apply_force(Vector2(-speed,0))
-	
+
+func take_damage():
+	emit_signal("took_damage")
+func die():
+	queue_free()

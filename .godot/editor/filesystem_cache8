@@ -1,41 +1,43 @@
 2a60927148abd1d33b818b535e306557
-::res://::1716645797
+::res://::1716709529
 export_presets.cfg::TextFile::-1::1716627838::0::1::::<><>::
 icon.svg::CompressedTexture2D::4431381867837458374::1716551218::1716551218::1::::<><>::
-README.md::TextFile::-1::1716560562::0::1::::<><>::
+README.md::TextFile::-1::1716646730::0::1::::<><>::
 ::res://assets/::1716551218
 ::res://assets/audio/::1716551218
 Retro PickUp Coin 04.wav::AudioStreamWAV::849592904126396329::1716551218::1716551218::1::::<><>::
 ::res://assets/fonts/::1716551218
 Kenney Blocks.ttf::FontFile::8340327011222802722::1716551218::1716551218::1::::<><>::
-::res://assets/textures/::1716551218
+::res://assets/textures/::1716713175
 ball.png::CompressedTexture2D::6402862643954683006::1716551218::1716551218::1::::<><>::
 bg.png::CompressedTexture2D::3178094932913668804::1716551218::1716551218::1::::<><>::
 coin.png::CompressedTexture2D::2728334379306573577::1716551218::1716551218::1::::<><>::
 coin.tres::ShaderMaterial::1441478547961181660::1716551218::0::1::::<><>::res://scripts/coin.gdshader
 missile.png::CompressedTexture2D::8510660106155734906::1716551218::1716551218::1::::<><>::
-turret_base.png::CompressedTexture2D::855140046951837604::1716551218::1716551218::1::::<><>::
-turret_shooing_part.png::CompressedTexture2D::5925930437819345348::1716551218::1716551218::1::::<><>::
+turret_base.png::CompressedTexture2D::855140046951837604::1716713175::1716713175::1::::<><>::
+turret_shooing_part.png::CompressedTexture2D::5925930437819345348::1716713171::1716713171::1::::<><>::
 ::res://assets/UI/::1716551218
 button.stylebox::StyleBoxTexture::8623317624866419318::1716551218::0::1::::<><>::uid://4tbje0s22dxu::::res://assets/UI/menu_button.png
 GAME MENU IMAGE.png::CompressedTexture2D::3188564156738624594::1716551218::1716551218::1::::<><>::
 main_menu_button_pressed.stylebox::StyleBoxTexture::3336026116115474769::1716551218::0::1::::<><>::uid://4tbje0s22dxu::::res://assets/UI/menu_button.png
 menu_button.png::CompressedTexture2D::2074776681536480566::1716551218::1716551218::1::::<><>::
 menu_panel.png::CompressedTexture2D::7892658967833924073::1716551218::1716551218::1::::<><>::
-::res://scene/::1716554384
-coin.tscn::PackedScene::8009645671086723883::1716551218::0::1::::<><>::res://scripts/coin.gd<>uid://usi685kd6e4k::::res://assets/textures/coin.tres<>uid://be4vjersustg8::::res://assets/textures/coin.png
+::res://scene/::1716712804
+coin.tscn::PackedScene::8009645671086723883::1716712776::0::1::::<><>::res://scripts/coin.gd<>uid://usi685kd6e4k::::res://assets/textures/coin.tres<>uid://be4vjersustg8::::res://assets/textures/coin.png
 coin_spawner.tscn::PackedScene::521345217184643061::1716551218::0::1::::<><>::res://scripts/coin_spawner.gd
-game.tscn::PackedScene::5840828071639518979::1716551218::0::1::::<><>::uid://dobfbijgos8kh::::res://scene/player.tscn<>res://scripts/game.gd<>uid://bljq02wmq1hgm::::res://assets/textures/bg.png<>uid://hosqkmsah7s0::::res://scene/coin_spawner.tscn<>uid://mdsw2xewaybh::::res://assets/audio/Retro PickUp Coin 04.wav<>uid://d2ngd3f33qmh1::::res://scene/hud.tscn<>uid://bsua8ad67essn::::res://scene/pause_menu.tscn
+game.tscn::PackedScene::5840828071639518979::1716712804::0::1::::<><>::uid://dobfbijgos8kh::::res://scene/player.tscn<>res://scripts/game.gd<>uid://bljq02wmq1hgm::::res://assets/textures/bg.png<>uid://hosqkmsah7s0::::res://scene/coin_spawner.tscn<>uid://mdsw2xewaybh::::res://assets/audio/Retro PickUp Coin 04.wav<>uid://d2ngd3f33qmh1::::res://scene/hud.tscn<>uid://bsua8ad67essn::::res://scene/pause_menu.tscn
 hud.tscn::PackedScene::9081568879135346488::1716551218::0::1::::<><>::res://scripts/hud.gd<>uid://dq3d75iilxvsc::::res://assets/fonts/Kenney Blocks.ttf
-main_menu.tscn::PackedScene::7878009964071350438::1716554384::0::1::::<><>::uid://dq3d75iilxvsc::::res://assets/fonts/Kenney Blocks.ttf<>res://scripts/main_menu.gd<>uid://du4g1tkdyntvy::::res://assets/UI/button.stylebox<>uid://blotgk163afty::::res://assets/UI/GAME MENU IMAGE.png<>uid://bnr84lk4bn1y8::::res://assets/UI/main_menu_button_pressed.stylebox
-pause_menu.gd::GDScript::-1::1716551218::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::3691166361543593849::1716551218::0::1::::<><>::res://scene/pause_menu.gd<>uid://dkpi67ypevdxh::::res://assets/UI/menu_panel.png<>uid://dq3d75iilxvsc::::res://assets/fonts/Kenney Blocks.ttf<>uid://du4g1tkdyntvy::::res://assets/UI/button.stylebox<>uid://bnr84lk4bn1y8::::res://assets/UI/main_menu_button_pressed.stylebox
-player.tscn::PackedScene::8144276044905661647::1716551218::0::1::::<><>::uid://cxhuhhnkb13x7::::res://assets/textures/ball.png<>res://scripts/player.gd
-::res://scripts/::1716551218
+main_menu.tscn::PackedScene::7878009964071350438::1716712776::0::1::::<><>::uid://dq3d75iilxvsc::::res://assets/fonts/Kenney Blocks.ttf<>res://scripts/main_menu.gd<>uid://du4g1tkdyntvy::::res://assets/UI/button.stylebox<>uid://blotgk163afty::::res://assets/UI/GAME MENU IMAGE.png<>uid://bnr84lk4bn1y8::::res://assets/UI/main_menu_button_pressed.stylebox
+pause_menu.tscn::PackedScene::3691166361543593849::1716712776::0::1::::<><>::res://scripts/pause_menu.gd<>uid://dkpi67ypevdxh::::res://assets/UI/menu_panel.png<>uid://dq3d75iilxvsc::::res://assets/fonts/Kenney Blocks.ttf<>uid://du4g1tkdyntvy::::res://assets/UI/button.stylebox<>uid://bnr84lk4bn1y8::::res://assets/UI/main_menu_button_pressed.stylebox
+player.tscn::PackedScene::8144276044905661647::1716712776::0::1::::<><>::uid://cxhuhhnkb13x7::::res://assets/textures/ball.png<>res://scripts/player.gd
+missile.tscn::PackedScene::6352472320163766527::1716712776::0::1::::<><>::uid://dtivlf1mka48e::::res://assets/textures/missile.png<>res://scripts/missile.gd
+::res://scripts/::1716712776
 coin.gd::GDScript::-1::1716551218::0::1::::<>Area2D<>::
 coin.gdshader::Shader::-1::1716551218::0::1::::<><>::
 coin_spawner.gd::GDScript::-1::1716551218::0::1::::<>Node2D<>::
-game.gd::GDScript::-1::1716551218::0::1::::<>Node2D<>::
+game.gd::GDScript::-1::1716646283::0::1::::<>Node2D<>::
 hud.gd::GDScript::-1::1716551218::0::1::::<>Control<>::
-main_menu.gd::GDScript::-1::1716551218::0::1::::<>Control<>::
+main_menu.gd::GDScript::-1::1716646308::0::1::::<>Control<>::
+pause_menu.gd::GDScript::-1::1716646377::0::1::::<>Control<>::
 player.gd::GDScript::-1::1716551218::0::1::::<>RigidBody2D<>::
+missile.gd::GDScript::-1::1716712776::0::1::::<>Area2D<>::
