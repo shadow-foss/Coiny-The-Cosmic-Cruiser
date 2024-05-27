@@ -1,9 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dobfbijgos8kh"]
+[gd_scene load_steps=28 format=3 uid="uid://dobfbijgos8kh"]
 
 [ext_resource type="Texture2D" uid="uid://cxhuhhnkb13x7" path="res://assets/textures/ball.png" id="1_2wqxj"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ila60"]
 [ext_resource type="Texture2D" uid="uid://75o3j2g2hmjy" path="res://assets/textures/explosion-Sheet.png" id="2_detou"]
-[ext_resource type="AudioStream" uid="uid://ywqm6en4sjw8" path="res://assets/audio/explode.wav" id="4_581u7"]
 [ext_resource type="AudioStream" uid="uid://bf4invyl8w7kv" path="res://assets/audio/take_damage.wav" id="4_mdl25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cicnn"]
@@ -198,7 +197,3 @@ explosiveness = 1.0
 position = Vector2(1, -16)
 stream = ExtResource("4_mdl25")
 pitch_scale = 1.76
-
-[node name="explode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_581u7")
-pitch_scale = 1.91
