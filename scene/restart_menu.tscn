@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://oc3p7yny62dq"]
+[gd_scene load_steps=6 format=3 uid="uid://oc3p7yny62dq"]
+
+[ext_resource type="Script" path="res://scripts/restart_menu.gd" id="1_n76g3"]
+[ext_resource type="StyleBox" uid="uid://gj25pf2vgkqs" path="res://assets/UI/pause_menu.stylebox" id="2_w23lj"]
+[ext_resource type="FontFile" uid="uid://dq3d75iilxvsc" path="res://assets/fonts/Kenney Blocks.ttf" id="3_utsyk"]
+[ext_resource type="StyleBox" uid="uid://du4g1tkdyntvy" path="res://assets/UI/button.stylebox" id="4_k735u"]
+[ext_resource type="StyleBox" uid="uid://bnr84lk4bn1y8" path="res://assets/UI/main_menu_button_pressed.stylebox" id="5_t5jcx"]
 
 [node name="restart_menu" type="Control"]
 layout_mode = 3
@@ -7,9 +13,68 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n76g3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.611765, 0.592157, 1, 1)
+color = Color(2.42008e-07, 0.153479, 0.213153, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 181.0
+offset_right = 788.0
+offset_bottom = 575.0
+theme_override_styles/panel = ExtResource("2_w23lj")
+
+[node name="mission_failed_txt" type="Label" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 213.0
+offset_right = 852.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.84, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_utsyk")
+theme_override_font_sizes/font_size = 30
+text = "MISSION 
+ FAILED"
+
+[node name="retry_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 327.0
+offset_right = 721.0
+offset_bottom = 462.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.560784, 0.698039, 1, 1)
+theme_override_colors/font_hover_color = Color(0.654902, 0.764706, 1, 1)
+theme_override_fonts/font = ExtResource("3_utsyk")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = ExtResource("4_k735u")
+theme_override_styles/hover = ExtResource("5_t5jcx")
+theme_override_styles/pressed = ExtResource("5_t5jcx")
+theme_override_styles/focus = ExtResource("5_t5jcx")
+text = "retry"
+
+[node name="Quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 442.0
+offset_right = 693.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.780392, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0.25098, 0, 1)
+theme_override_fonts/font = ExtResource("3_utsyk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_k735u")
+theme_override_styles/hover = ExtResource("5_t5jcx")
+theme_override_styles/pressed = ExtResource("5_t5jcx")
+theme_override_styles/focus = ExtResource("5_t5jcx")
+text = "Quit
+"
+
+[connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

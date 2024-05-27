@@ -27,6 +27,12 @@ func _physics_process(delta):
 		apply_force(Vector2(-speed,0))
 
 func take_damage():
+	$take_dmg.play()
+	$GPUParticles2D.restart()
+	$GPUParticles2D.emitting == true
 	emit_signal("took_damage")
+	
 func die():
+	$AnimatedSprite2D.play("EXPLODE")
+	await  get_tree().create_timer(.8).timeout
 	queue_free()
