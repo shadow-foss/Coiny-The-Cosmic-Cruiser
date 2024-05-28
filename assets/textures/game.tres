@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c712c20s0aa6l"]
+
+[ext_resource type="Shader" path="res://assets/textures/game.gdshader" id="1_glio2"]
+
+[resource]
+shader = ExtResource("1_glio2")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed_scale = 10.0

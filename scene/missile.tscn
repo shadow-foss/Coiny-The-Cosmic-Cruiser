@@ -7,6 +7,7 @@
 size = Vector2(48, 14)
 
 [node name="missile" type="Area2D"]
+collision_layer = 16
 script = ExtResource("1_s1wfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,3 +1,9 @@
+ParallaxLayer
+ParallaxBackground
+TextureRect
+TileMap
+CollisionShape2D
+StaticBody2D
 AudioStreamPlayer2D
 Button
 VBoxContainer
@@ -7,8 +13,3 @@ GPUParticles2D
 AnimatedSprite2D
 CPUParticles2D
 Node
-Node2D
-ColorRect
-CollisionShape2D
-StaticBody2D
-RayCast2D

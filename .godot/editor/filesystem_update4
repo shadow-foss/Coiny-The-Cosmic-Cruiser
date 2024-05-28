@@ -1,11 +1,13 @@
-res://scene/main_menu.tscn
+res://scene/game.tscn
 res://assets/UI/pause_menu.stylebox
+res://scene/main_menu.tscn
 res://scene/pause_menu.tscn
 res://scene/missile.tscn
 res://scene/coin.tscn
 res://scene/player.tscn
-res://scene/game.tscn
 res://scene/turret.tscn
 res://scene/hud.tscn
 res://scene/restart_menu.tscn
 res://scene/coin_spawner.tscn
+res://assets/textures/game.gdshader
+res://assets/textures/game.tres

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bf4invyl8w7kv" path="res://assets/audio/take_damage.wav" id="4_mdl25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cicnn"]
-radius = 50.04
+radius = 53.0094
 
 [sub_resource type="Gradient" id="Gradient_ywtia"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -134,7 +134,7 @@ colors = PackedColorArray(1, 1, 1, 0.6, 0.563338, 1, 1, 1, 0.0117647, 1, 1, 0.61
 gradient = SubResource("Gradient_3ydia")
 
 [sub_resource type="Curve" id="Curve_7358x"]
-_data = [Vector2(0.0253165, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.802198), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(1, 0.901099), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_hrbvh"]
@@ -148,13 +148,13 @@ initial_velocity_max = 400.0
 gravity = Vector3(2.08165e-12, 500, 2.08165e-12)
 damping_min = 21.505
 damping_max = 45.203
-scale_min = 2.0
-scale_max = 6.0
+scale_min = 4.0
+scale_max = 7.0
 scale_curve = SubResource("CurveTexture_hrbvh")
 color_ramp = SubResource("GradientTexture1D_a5gch")
 
 [node name="Player" type="RigidBody2D"]
-collision_mask = 14
+collision_mask = 30
 mass = 0.9
 gravity_scale = 1.66533e-16
 script = ExtResource("1_ila60")
@@ -175,17 +175,18 @@ shape = SubResource("CircleShape2D_cicnn")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.513726, 1, 1, 1)
+energy = 0.5
 texture = SubResource("GradientTexture2D_jy1rp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.572549)
+modulate = Color(1, 1, 1, 0.764706)
 position = Vector2(-3, 2)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qyi0c")
 animation = &"EXPLODE"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(1, -16)
+position = Vector2(1, 2.08165e-12)
 emitting = false
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_sioul")

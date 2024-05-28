@@ -60,6 +60,7 @@ pause_resume={
 2d_physics/layer_2="coin"
 2d_physics/layer_3="wall"
 2d_physics/layer_4="turret"
+2d_physics/layer_5="missile"
 
 [physics]
 

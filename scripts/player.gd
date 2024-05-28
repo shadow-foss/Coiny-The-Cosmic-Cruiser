@@ -4,7 +4,7 @@ signal took_damage
 #NOTE: adjusting the mass or other stuffs in rigidbody2d node could affect speed and movement
 #@export exports the variable to the inspector menu 
 #but the value set in code is default and can be reverted by undo in inspector
-@export var speed =400 #changes movement_speed
+@export var speed =375 #changes movement_speed
 @export var rotational_speed = 400 #changes the rotation speed when player moves
 
 func _physics_process(delta):

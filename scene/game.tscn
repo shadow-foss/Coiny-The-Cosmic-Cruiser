@@ -1,14 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://cphlt5ihrcd8v"]
+[gd_scene load_steps=18 format=3 uid="uid://cphlt5ihrcd8v"]
 
 [ext_resource type="PackedScene" uid="uid://dobfbijgos8kh" path="res://scene/player.tscn" id="1_d5a3m"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_s4wx4"]
-[ext_resource type="Texture2D" uid="uid://bljq02wmq1hgm" path="res://assets/textures/bg.png" id="2_qk3ll"]
+[ext_resource type="Material" uid="uid://c712c20s0aa6l" path="res://assets/textures/game.tres" id="2_8ffnn"]
+[ext_resource type="Texture2D" uid="uid://dg8itrsmr7h44" path="res://assets/textures/TILEMAP.png" id="3_ksamr"]
 [ext_resource type="PackedScene" uid="uid://hosqkmsah7s0" path="res://scene/coin_spawner.tscn" id="4_u1gg8"]
-[ext_resource type="AudioStream" uid="uid://mdsw2xewaybh" path="res://assets/audio/Retro PickUp Coin 04.wav" id="5_tlm4p"]
+[ext_resource type="AudioStream" uid="uid://mdsw2xewaybh" path="res://assets/audio/COIN.wav" id="5_tlm4p"]
 [ext_resource type="PackedScene" uid="uid://d2ngd3f33qmh1" path="res://scene/hud.tscn" id="6_wcljd"]
 [ext_resource type="PackedScene" uid="uid://bsua8ad67essn" path="res://scene/pause_menu.tscn" id="7_v2amy"]
 [ext_resource type="PackedScene" uid="uid://diau5n0nqttci" path="res://scene/turret.tscn" id="8_2vxui"]
+[ext_resource type="Texture2D" uid="uid://fh5eaxqnk4m8" path="res://assets/textures/DESERT_TILE.png" id="9_sxil5"]
 [ext_resource type="PackedScene" uid="uid://oc3p7yny62dq" path="res://scene/restart_menu.tscn" id="9_xcq5j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc0ju"]
+texture = ExtResource("3_ksamr")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_40eh7"]
+sources/0 = SubResource("TileSetAtlasSource_hc0ju")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuymp"]
 size = Vector2(125, 1219)
@@ -30,11 +41,18 @@ fog_enabled = true
 process_mode = 1
 script = ExtResource("1_s4wx4")
 
-[node name="bg" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("2_8ffnn")
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_qk3ll")
+texture = ExtResource("9_sxil5")
 stretch_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_40eh7")
+format = 2
+layer_0/tile_data = PackedInt32Array(262164, 65536, 0, 262163, 65536, 0, 262162, 65536, 0, 262161, 65536, 0, 262160, 65536, 0, 262159, 65536, 0, 262158, 65536, 0, 262157, 65536, 0, 262156, 65536, 0, 262155, 65536, 0, 262154, 65536, 0, 262153, 65536, 0, 262152, 65536, 0, 262151, 65536, 0, 262150, 65536, 0, 262149, 65536, 0, 262148, 65536, 0, 262147, 65536, 0, 262146, 65536, 0, 262145, 65536, 0, 262144, 65536, 0, 327679, 65536, 0, 393215, 131072, 0, 327680, 131072, 0, 327681, 131072, 0, 327682, 131072, 0, 327683, 131072, 0, 327684, 131072, 0, 327685, 131072, 0, 327686, 131072, 0, 327687, 131072, 0, 327688, 131072, 0, 327689, 131072, 0, 327690, 131072, 0, 327691, 131072, 0, 327692, 131072, 0, 327693, 131072, 0, 327694, 131072, 0, 327695, 131072, 0, 327696, 131072, 0, 327697, 131072, 0, 327698, 131072, 0, 327699, 131072, 0, 327700, 131072, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 393216, 65536, 0, 393217, 65536, 0, 393218, 65536, 0, 393219, 65536, 0, 393220, 65536, 0, 393221, 65536, 0, 393222, 65536, 0, 393223, 65536, 0, 393224, 65536, 0, 393225, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 393230, 65536, 0, 393231, 65536, 0, 393232, 65536, 0, 393233, 65536, 0, 393234, 65536, 0, 393235, 65536, 0, 458752, 65536, 0, 458753, 65536, 0, 458754, 65536, 0, 458755, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 458758, 65536, 0, 458759, 65536, 0, 458760, 65536, 0, 458761, 65536, 0, 458762, 65536, 0, 458763, 65536, 0, 458764, 65536, 0, 458765, 65536, 0, 458766, 65536, 0, 458767, 65536, 0, 458768, 65536, 0, 458769, 65536, 0, 458770, 65536, 0, 458771, 65536, 0, 458772, 65536, 0, 458751, 65536, 0, 524287, 65536, 0, 393236, 65536, 0, 196628, 65536, 0, 262143, 65536, 0, 196607, 65536, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 131083, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 65536, 0, 131089, 65536, 0, 131090, 65536, 0, 131091, 65536, 0, 131092, 65536, 0, 524308, 65536, 0, 524307, 65536, 0, 524306, 65536, 0, 524305, 65536, 0, 524304, 65536, 0, 524303, 65536, 0, 524302, 65536, 0, 524301, 65536, 0, 524300, 65536, 0, 524299, 65536, 0, 524298, 65536, 0, 524297, 65536, 0, 524296, 65536, 0, 524295, 65536, 0, 524294, 65536, 0, 524293, 65536, 0, 524292, 65536, 0, 524291, 65536, 0, 524290, 65536, 0, 524289, 65536, 0, 524288, 65536, 0, 589823, 65536, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_d5a3m")]
 position = Vector2(500, 350)
@@ -51,7 +69,7 @@ position = Vector2(992, -62)
 shape = SubResource("RectangleShape2D_g5dfi")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
-position = Vector2(1332, 520)
+position = Vector2(1333, 470)
 shape = SubResource("RectangleShape2D_560qe")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
