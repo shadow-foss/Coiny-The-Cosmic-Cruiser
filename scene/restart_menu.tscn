@@ -19,7 +19,7 @@ script = ExtResource("1_n76g3")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(2.42008e-07, 0.153479, 0.213153, 1)
+color = Color(0, 0, 0, 0.87451)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

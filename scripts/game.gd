@@ -39,7 +39,8 @@ func collected(deleted):
 
 
 func _on_player_took_damage():
-	lives -= 1
+	if lives > 0:
+		lives -= 1
 	hud.set_life(lives)
 	if lives <= 0:
 		player.die()

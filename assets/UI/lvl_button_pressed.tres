@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://d166jhkq7ni8"]
+
+[ext_resource type="Texture2D" uid="uid://c3pvamwqbyka3" path="res://assets/UI/LEVEL_BUTTON.png" id="1_nl27e"]
+
+[resource]
+texture = ExtResource("1_nl27e")
+modulate_color = Color(0.813258, 0.813258, 0.813258, 1)
