@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://gvlyvetsdpr8"]
+[gd_scene load_steps=11 format=3 uid="uid://gvlyvetsdpr8"]
 
 [ext_resource type="Texture2D" uid="uid://c52tbj02llaoh" path="res://assets/textures/TRUCK.png" id="1_din0f"]
 [ext_resource type="Script" path="res://scripts/truck.gd" id="1_do5k1"]
@@ -7,6 +7,35 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3a2mt"]
 size = Vector2(434, 197)
+
+[sub_resource type="Gradient" id="Gradient_up081"]
+offsets = PackedFloat32Array(0.372093, 0.651163, 1)
+colors = PackedColorArray(0, 0, 0, 0.772549, 0.244776, 0.244776, 0.244776, 1, 0.230315, 0.230315, 0.230315, 0.615686)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hpxro"]
+gradient = SubResource("Gradient_up081")
+
+[sub_resource type="Curve" id="Curve_ni2ym"]
+_data = [Vector2(0.00636943, 0.78022), 0.0, 2.15659, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.80743, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_t66u8"]
+curve = SubResource("Curve_ni2ym")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lhe7d"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(1, 0.5, 2.08165e-12)
+spread = 21.522
+initial_velocity_min = 80.0
+initial_velocity_max = 184.48
+gravity = Vector3(600, 300, 2.08165e-12)
+scale_min = 5.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_t66u8")
+color_ramp = SubResource("GradientTexture1D_hpxro")
 
 [node name="Truck" type="StaticBody2D"]
 collision_layer = 32
@@ -29,3 +58,9 @@ texture = ExtResource("3_flv5s")
 [node name="turret" parent="." instance=ExtResource("4_qhq5x")]
 position = Vector2(-165, -39)
 rotation = 3.14159
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-65, 98)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_lhe7d")
+lifetime = 0.2

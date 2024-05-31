@@ -1,0 +1,143 @@
+[gd_scene load_steps=18 format=3 uid="uid://cbpgtdhynuvkt"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_noo37"]
+[ext_resource type="Texture2D" uid="uid://dg8itrsmr7h44" path="res://assets/textures/TILEMAP.png" id="2_eoenh"]
+[ext_resource type="PackedScene" uid="uid://hosqkmsah7s0" path="res://scene/coin_spawner.tscn" id="3_dj6i8"]
+[ext_resource type="AudioStream" uid="uid://mdsw2xewaybh" path="res://assets/audio/COIN.wav" id="4_ibk7n"]
+[ext_resource type="PackedScene" uid="uid://gvlyvetsdpr8" path="res://scene/truck.tscn" id="5_hnkhw"]
+[ext_resource type="PackedScene" uid="uid://dobfbijgos8kh" path="res://scene/player.tscn" id="6_ugv62"]
+[ext_resource type="PackedScene" uid="uid://d2ngd3f33qmh1" path="res://scene/hud.tscn" id="7_a0ajo"]
+[ext_resource type="PackedScene" uid="uid://bsua8ad67essn" path="res://scene/pause_menu.tscn" id="8_fgle1"]
+[ext_resource type="PackedScene" uid="uid://oc3p7yny62dq" path="res://scene/restart_menu.tscn" id="9_h0nv7"]
+
+[sub_resource type="Shader" id="Shader_quucy"]
+code = "shader_type canvas_item;
+ 
+uniform vec2 direction = vec2(1.0, 0.0);
+uniform float speed_scale = 10.;
+ 
+void fragment(){
+    vec2 move = direction * TIME * speed_scale;
+    COLOR = texture(TEXTURE, UV + move);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2m3r7"]
+shader = SubResource("Shader_quucy")
+shader_parameter/direction = Vector2(1, 2.08165e-12)
+shader_parameter/speed_scale = 10.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc0ju"]
+texture = ExtResource("2_eoenh")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_40eh7"]
+sources/0 = SubResource("TileSetAtlasSource_hc0ju")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuymp"]
+size = Vector2(125, 1219)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dfi"]
+size = Vector2(2028, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_560qe"]
+size = Vector2(110.5, 1214)
+
+[sub_resource type="Environment" id="Environment_c70pd"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.22
+glow_blend_mode = 0
+fog_enabled = true
+
+[node name="grass" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_noo37")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 2.08165e-12)
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer2"]
+material = SubResource("ShaderMaterial_2m3r7")
+use_parent_material = true
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_40eh7")
+format = 2
+layer_0/tile_data = PackedInt32Array(262164, 65536, 0, 262163, 65536, 0, 262162, 65536, 0, 262161, 65536, 0, 262160, 65536, 0, 262159, 65536, 0, 262158, 65536, 0, 262157, 65536, 0, 262156, 65536, 0, 262155, 65536, 0, 262154, 65536, 0, 262153, 65536, 0, 262152, 65536, 0, 262151, 65536, 0, 262150, 65536, 0, 262149, 65536, 0, 262148, 65536, 0, 262147, 65536, 0, 262146, 65536, 0, 262145, 65536, 0, 262144, 65536, 0, 327679, 65536, 0, 393215, 131072, 0, 327680, 131072, 0, 327681, 131072, 0, 327682, 131072, 0, 327683, 131072, 0, 327684, 131072, 0, 327685, 131072, 0, 327686, 131072, 0, 327687, 131072, 0, 327688, 131072, 0, 327689, 131072, 0, 327690, 131072, 0, 327691, 131072, 0, 327692, 131072, 0, 327693, 131072, 0, 327694, 131072, 0, 327695, 131072, 0, 327696, 131072, 0, 327697, 131072, 0, 327698, 131072, 0, 327699, 131072, 0, 327700, 131072, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 393216, 65536, 0, 393217, 65536, 0, 393218, 65536, 0, 393219, 65536, 0, 393220, 65536, 0, 393221, 65536, 0, 393222, 65536, 0, 393223, 65536, 0, 393224, 65536, 0, 393225, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 393230, 65536, 0, 393231, 65536, 0, 393232, 65536, 0, 393233, 65536, 0, 393234, 65536, 0, 393235, 65536, 0, 458752, 65536, 0, 458753, 65536, 0, 458754, 65536, 0, 458755, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 458758, 65536, 0, 458759, 65536, 0, 458760, 65536, 0, 458761, 65536, 0, 458762, 65536, 0, 458763, 65536, 0, 458764, 65536, 0, 458765, 65536, 0, 458766, 65536, 0, 458767, 65536, 0, 458768, 65536, 0, 458769, 65536, 0, 458770, 65536, 0, 458771, 65536, 0, 458772, 65536, 0, 458751, 65536, 0, 524287, 65536, 0, 393236, 65536, 0, 196628, 65536, 0, 262143, 65536, 0, 196607, 65536, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 131083, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 65536, 0, 131089, 65536, 0, 131090, 65536, 0, 131091, 65536, 0, 131092, 65536, 0, 524308, 65536, 0, 524307, 65536, 0, 524306, 65536, 0, 524305, 65536, 0, 524304, 65536, 0, 524303, 65536, 0, 524302, 65536, 0, 524301, 65536, 0, 524300, 65536, 0, 524299, 65536, 0, 524298, 65536, 0, 524297, 65536, 0, 524296, 65536, 0, 524295, 65536, 0, 524294, 65536, 0, 524293, 65536, 0, 524292, 65536, 0, 524291, 65536, 0, 524290, 65536, 0, 524289, 65536, 0, 524288, 65536, 0, 589823, 65536, 0, 589824, 196608, 0, 589825, 196608, 0, 589826, 196608, 0, 655359, 196608, 0, 720895, 196608, 0, 786431, 196608, 0, 589844, 196608, 0, 589827, 196608, 0, 589828, 196608, 0, 589829, 196608, 0, 589830, 196608, 0, 589831, 196608, 0, 589832, 196608, 0, 589833, 196608, 0, 589834, 196608, 0, 589835, 196608, 0, 589836, 196608, 0, 589837, 196608, 0, 589838, 196608, 0, 589839, 196608, 0, 589840, 196608, 0, 589841, 196608, 0, 589842, 196608, 0, 655360, 196608, 0, 655361, 196608, 0, 655362, 196608, 0, 655363, 196608, 0, 655364, 196608, 0, 655365, 196608, 0, 655366, 196608, 0, 655367, 196608, 0, 655368, 196608, 0, 655369, 196608, 0, 655370, 196608, 0, 655371, 196608, 0, 655372, 196608, 0, 655373, 196608, 0, 655374, 196608, 0, 655375, 196608, 0, 655376, 196608, 0, 720896, 196608, 0, 720897, 196608, 0, 720898, 196608, 0, 720899, 196608, 0, 720900, 196608, 0, 720901, 196608, 0, 720902, 196608, 0, 720903, 196608, 0, 720904, 196608, 0, 720905, 196608, 0, 720906, 196608, 0, 720907, 196608, 0, 720908, 196608, 0, 720909, 196608, 0, 720910, 196608, 0, 720911, 196608, 0, 720912, 196608, 0, 720913, 196608, 0, 720914, 196608, 0, 655358, 196608, 0, 720894, 196608, 0, 786430, 196608, 0, 589843, 196608, 0, 589846, 196608, 0, 589845, 196608, 0, 131070, 196608, 0, 65534, 196608, 0, -2, 196608, 0, -65518, 196608, 0, -65519, 196608, 0, -65520, 196608, 0, -65521, 196608, 0, -65522, 196608, 0, -65523, 196608, 0, -65524, 196608, 0, -65525, 196608, 0, -65526, 196608, 0, -65527, 196608, 0, -65528, 196608, 0, -65529, 196608, 0, -65530, 196608, 0, -65531, 196608, 0, -65532, 196608, 0, -65533, 196608, 0, -65534, 196608, 0, -65535, 196608, 0, -65536, 196608, 0, -1, 196608, 0, 65535, 196608, 0, 0, 196608, 0, 1, 196608, 0, 2, 196608, 0, 3, 196608, 0, 4, 196608, 0, 5, 196608, 0, 6, 196608, 0, 7, 196608, 0, 8, 196608, 0, 9, 196608, 0, 10, 196608, 0, 11, 196608, 0, 12, 196608, 0, 13, 196608, 0, 14, 196608, 0, 15, 196608, 0, 16, 196608, 0, 17, 196608, 0, 65553, 196608, 0, 65552, 196608, 0, 65551, 196608, 0, 65550, 196608, 0, 65549, 196608, 0, 65548, 196608, 0, 65547, 196608, 0, 65546, 196608, 0, 65545, 196608, 0, 65544, 196608, 0, 65543, 196608, 0, 65542, 196608, 0, 65541, 196608, 0, 65540, 196608, 0, 65539, 196608, 0, 65538, 196608, 0, 65537, 196608, 0, 65536, 196608, 0, 131071, 196608, 0, 65558, 196608, 0, 22, 196608, 0, -65514, 196608, 0, -65515, 196608, 0, -65516, 196608, 0, -65517, 196608, 0, 18, 196608, 0, 19, 196608, 0, 65555, 196608, 0, 65556, 196608, 0, 65557, 196608, 0, 21, 196608, 0, 20, 196608, 0, 65554, 196608, 0, 655379, 196608, 0, 655380, 196608, 0, 720917, 196608, 0, 655381, 196608, 0, 655382, 196608, 0, 720918, 196608, 0, 720916, 196608, 0, 720915, 196608, 0, 655377, 196608, 0, 655378, 196608, 0)
+layer_1/tile_data = PackedInt32Array(655383, 327680, 0, 65557, 327680, 0, 65544, 327680, 0, 16, 327680, 0, 65559, 327680, 0, 655369, 327680, 0, 655377, 327680, 0, 589830, 327680, 0, 589837, 327680, 0, 11, 327680, 0, 19, 327680, 0, 20, 327680, 0, 21, 327680, 0, 65558, 327680, 0, 3, 327680, 0)
+
+[node name="moving stuffs" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="coin_container" type="Node2D" parent="moving stuffs"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving stuffs"]
+position = Vector2(318, 494)
+shape = SubResource("RectangleShape2D_xuymp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="moving stuffs"]
+position = Vector2(992, -62)
+shape = SubResource("RectangleShape2D_g5dfi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="moving stuffs"]
+position = Vector2(1713, 453)
+shape = SubResource("RectangleShape2D_560qe")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="moving stuffs"]
+position = Vector2(756, 785)
+shape = SubResource("RectangleShape2D_g5dfi")
+
+[node name="Camera2D" type="Camera2D" parent="moving stuffs"]
+position = Vector2(1020, 359)
+
+[node name="coin_spawner" parent="moving stuffs" instance=ExtResource("3_dj6i8")]
+
+[node name="coin_aud" type="AudioStreamPlayer2D" parent="moving stuffs"]
+stream = ExtResource("4_ibk7n")
+pitch_scale = 1.09
+max_distance = 5000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c70pd")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.281187, 0.281187, 0.281187, 1)
+energy = 0.18
+blend_mode = 1
+
+[node name="Truck" parent="." instance=ExtResource("5_hnkhw")]
+position = Vector2(1373, 229)
+
+[node name="Player" parent="." instance=ExtResource("6_ugv62")]
+position = Vector2(500, 350)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("7_a0ajo")]
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 3.0
+
+[node name="pause_menu" parent="UI" instance=ExtResource("8_fgle1")]
+process_mode = 3
+visible = false
+
+[node name="restart_menu" parent="UI" instance=ExtResource("9_h0nv7")]
+visible = false
+
+[connection signal="alive" from="." to="moving stuffs/coin_spawner" method="_on_game_alive"]
+[connection signal="alive" from="." to="Truck/turret" method="_on_game_alive"]
+[connection signal="no_of_coins" from="." to="moving stuffs/coin_spawner" method="_on_game_no_of_coins"]
+[connection signal="child_entered_tree" from="moving stuffs/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="coin_spawned" from="moving stuffs/coin_spawner" to="." method="_on_coin_spawner_coin_spawned"]
+[connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
+
+[editable path="Truck"]

@@ -4,14 +4,10 @@ res://scene/pause_menu.tscn
 res://scene/missile.tscn
 res://scene/coin.tscn
 res://scene/player.tscn
-res://scene/game.tscn
+res://scene/desert.tscn
 res://scene/turret.tscn
 res://scene/hud.tscn
 res://scene/restart_menu.tscn
 res://scene/coin_spawner.tscn
 res://scene/truck.tscn
-res://scripts/game.gd
-res://scripts/coin_spawner.gd
-res://scripts/coin.gd
-res://scripts/player.gd
-res://scripts/missile.gd
+res://scene/grassland.tscn
