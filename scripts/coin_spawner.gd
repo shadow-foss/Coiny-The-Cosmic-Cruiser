@@ -6,33 +6,34 @@ var number_coins = 0 #creates a variable
 var alive = true
 var player
 var turret
-
+var coin_cont
 func _ready():
-	player = get_parent().find_child("Player")
-	turret = get_parent().find_child("turret")
+	pass
+	player = get_parent().get_parent().find_child("Player")
+	turret = get_parent().get_parent().find_child("Truck")
+	coin_cont = get_parent().get_parent().find_child("coin_container")
 
 func spawn_coin(): #custom func
 	var too_close_to_bodies = true
-	var spawn_pos = Vector2(randf_range(50,1230),randf_range(50,680))
+	var spawn_pos = Vector2(randf_range($pos_x1.position.x,$pos_x2.position.x),randf_range($pos_x2.position.y,$pos_y.position.y))
 	#while loop to make sure coins dont spawn on player
-	while too_close_to_bodies:
-		var valid_spawn = true
-		for i in $coin_container.get_children():
-			if not spawn_pos.distance_to(i.position) > 75:
-				valid_spawn = false
-				break
-
-		if valid_spawn and spawn_pos.distance_to(player.position) > 200 and spawn_pos.distance_to(turret.position) > 200:
-			too_close_to_bodies = false
-		else:
-			spawn_pos = Vector2(randf_range(50,1230), randf_range(50,680))
+	#while too_close_to_bodies:
+		#var valid_spawn = true
+		#for i in coin_cont.get_children():
+			#if not spawn_pos.distance_to(i.position) > 75:
+				#valid_spawn = false
+				#break
+#
+		#if valid_spawn and spawn_pos.distance_to(player.position) > 50 and spawn_pos.distance_to(turret.position ) > 300:
+			#too_close_to_bodies = false
+		#else:
+			#spawn_pos = Vector2(randf_range(50,500), randf_range(50,680))
 	var coin_inst = coin.instantiate()
 	coin_inst.position = spawn_pos
 	emit_signal("coin_spawned", coin_inst)#emits signal coin spawned with parameters spawn_position,coin_instance
 
 
-
-func _on_timer_timeout(): #connects timeout signal of timer node in coin_spawner
+func _on_timer_timeout():
 	if number_coins <= randf_range(10,16) && alive == true: #gets random max value for no of coins
 		spawn_coin()
 

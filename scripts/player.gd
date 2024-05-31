@@ -5,9 +5,10 @@ signal took_damage
 #@export exports the variable to the inspector menu 
 #but the value set in code is default and can be reverted by undo in inspector
 @export var speed =375 #changes movement_speed
-@export var rotational_speed = 400 #changes the rotation speed when player moves
+@export var rotational_speed = 250 #changes the rotation speed when player moves
 
 func _physics_process(delta):
+
 	#apply torque makes the player rotate when input is pressed
 	#applyforce is for movement
 	#vector2 have 2 float value of x,y

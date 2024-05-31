@@ -10,17 +10,18 @@ var alive = true
 var player 
 
 func _ready():
-	player = get_parent().find_child("Player")
+	player = get_parent().get_parent().find_child("Player")
+var vehicle
 
-
-func _physics_process(_delta):
-	_aim()
-
- 
-func _aim():
+func _physics_process(delta):
+	vehicle = 300 * delta
 	if alive:
-		raycast.target_position = -(to_local(player.position))
-		turret.rotation = to_local(player.position).angle()
+		_aim()
+
+
+func _aim():
+	raycast.target_position = -(to_local(player.position))
+	turret.rotation = to_local(player.position).angle()
 
  
 
@@ -29,12 +30,16 @@ func _shoot():
 	bullet.position = muzzle.global_position
 	bullet.direction = (raycast.target_position).normalized()
 	bullet.rotation = get_angle_to(player.position)
+	
 	missile_cont.add_child(bullet)
 
 
 func _on_cooldown_timeout():
 	if alive:
 		_shoot()
+
+
+
 
 
 func _on_game_alive(is_alive):

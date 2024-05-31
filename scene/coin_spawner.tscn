@@ -8,6 +8,13 @@ script = ExtResource("1_kgcy0")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="coin_container" type="Node" parent="."]
+[node name="pos_x2" type="Marker2D" parent="."]
+position = Vector2(1104, 56)
+
+[node name="pos_x1" type="Marker2D" parent="."]
+position = Vector2(924, 59)
+
+[node name="pos_y" type="Marker2D" parent="."]
+position = Vector2(1005, 479)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
